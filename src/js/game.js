@@ -4,6 +4,7 @@ import { Resources, ResourceLoader } from './resources.js'
 import { Background } from './background.js'
 import { Seagull } from './seagull.js'
 import { Plane } from './plane.js'
+import { Kite } from './kite.js'
 
 export class Game extends Engine {
 
@@ -27,6 +28,17 @@ export class Game extends Engine {
 
         const plane = new Plane
         this.add(plane)
+
+        for (let i = 0; i < 3; i++) {
+            this.add(new Kite());
+        }
+    }
+
+    gameOver() {
+        for (let actor of this.currentScene.actors) {
+            actor.kill()
+        }
+        this.startGame()
     }
 }
 

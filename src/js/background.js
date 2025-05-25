@@ -14,7 +14,9 @@ export class Background extends Actor {
     //     this.pos = new Vector(640, 360)
     // }
 
-    sprite
+    //Snippet
+
+    #sprite
 
     onInitialize(engine) {
         this.sprite = new Sprite({

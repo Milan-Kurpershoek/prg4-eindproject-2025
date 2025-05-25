@@ -13,6 +13,7 @@ export class Seagull extends Actor {
 
     }
 
+    //Snippet
     onPreUpdate(engine) {
         let xspeed = 0
         let yspeed = 0
