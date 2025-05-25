@@ -1,13 +1,13 @@
-import { Actor, Keys, Vector } from "excalibur"
+import { Actor, clamp, Keys, Vector } from "excalibur"
 import { Resources } from "./resources"
 
 export class Seagull extends Actor {
 
     constructor() {
-        super()
+        super({ width: Resources.Seagull.width, height: Resources.Seagull.height })
 
         this.graphics.use(Resources.Seagull.toSprite())
-        this.pos = new Vector(400, 400)
+        this.pos = new Vector(0, 0)
         this.vel = new Vector(0, 0)
         this.scale = new Vector(0.1, 0.1)
 
@@ -31,5 +31,7 @@ export class Seagull extends Actor {
         }
         this.vel = new Vector(xspeed, yspeed);
         this.graphics.flipHorizontal = (this.vel.x < 0)
+        this.pos.x = clamp(this.pos.x, this.width / 2, engine.drawWidth - this.width / 2);
+        this.pos.y = clamp(this.pos.y, this.width / 2, engine.drawHeight - this.height / 2);
     }
-}
+}   

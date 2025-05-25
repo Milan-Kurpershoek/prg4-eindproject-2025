@@ -5,7 +5,7 @@ const Resources = {
     Seagull: new ImageSource('images/seagull.png'),
     Plane: new ImageSource('images/plane.png'),
     Kite: new ImageSource('images/kite.png'),
-    Beach: new ImageSource('images/beach.png', { wrapping: ImageWrapping.Repeat }),
+    Beach: new ImageSource('images/beach.png', { wrapping: ImageWrapping.Mirror }),
 }
 
 const ResourceLoader = new Loader()

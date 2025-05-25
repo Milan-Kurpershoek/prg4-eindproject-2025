@@ -3,6 +3,7 @@ import { Actor, Engine, Vector, DisplayMode } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Background } from './background.js'
 import { Seagull } from './seagull.js'
+import { Plane } from './plane.js'
 
 export class Game extends Engine {
 
@@ -23,6 +24,9 @@ export class Game extends Engine {
 
         const seagull = new Seagull
         this.add(seagull)
+
+        const plane = new Plane
+        this.add(plane)
     }
 }
 
