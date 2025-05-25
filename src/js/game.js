@@ -5,6 +5,7 @@ import { Background } from './background.js'
 import { Seagull } from './seagull.js'
 import { Plane } from './plane.js'
 import { Kite } from './kite.js'
+import { Sandcastle } from './sandcastle.js'
 
 export class Game extends Engine {
 
@@ -32,6 +33,9 @@ export class Game extends Engine {
         for (let i = 0; i < 3; i++) {
             this.add(new Kite());
         }
+
+        const sandcastle = new Sandcastle
+        this.add(sandcastle)
     }
 
     gameOver() {

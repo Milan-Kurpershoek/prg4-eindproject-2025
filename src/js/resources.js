@@ -6,6 +6,7 @@ const Resources = {
     Plane: new ImageSource('images/plane.png'),
     Kite: new ImageSource('images/kite.png'),
     Beach: new ImageSource('images/beach.png', { wrapping: ImageWrapping.Mirror }),
+    Sandcastle: new ImageSource('images/sandcastle.png'),
 }
 
 const ResourceLoader = new Loader()
