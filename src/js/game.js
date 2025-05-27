@@ -6,6 +6,8 @@ import { Seagull } from './seagull.js'
 import { Plane } from './plane.js'
 import { Kite } from './kite.js'
 import { Sandcastle } from './sandcastle.js'
+import { Surfer } from './surfer.js'
+import { People } from './people.js'
 
 export class Game extends Engine {
 
@@ -36,6 +38,12 @@ export class Game extends Engine {
 
         const sandcastle = new Sandcastle
         this.add(sandcastle)
+
+        const surfer = new Surfer
+        this.add(surfer)
+
+        const people = new People
+        this.add(people)
     }
 
     gameOver() {

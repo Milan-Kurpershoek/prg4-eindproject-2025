@@ -7,7 +7,7 @@ export class Sandcastle extends Plane {
         super({ width: Resources.Sandcastle.width, height: Resources.Sandcastle.height })
 
         this.graphics.use(Resources.Sandcastle.toSprite())
-        this.pos = new Vector(1500, Math.random() * 220 + 440);
+        this.pos = new Vector(1500, Math.random() * 200 + 400);
         this.scale = new Vector(0.1, 0.1)
     }
 
