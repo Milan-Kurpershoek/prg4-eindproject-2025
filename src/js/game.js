@@ -18,6 +18,10 @@ export class Game extends Engine {
             maxFps: 60,
             pixelArt: true,
             displayMode: DisplayMode.FitScreen
+            // physics: {
+            //     solver: SolverStrategy.Arcade,
+            //     gravity: new Vector(0, 800),
+            // }
         })
         this.start(ResourceLoader).then(() => this.startGame())
     }

@@ -1,5 +1,6 @@
 import { Actor, Vector } from "excalibur";
 import { Resources } from "./resources";
+import { Seagull } from "./seagull";
 
 export class Surfer extends Actor {
     constructor() {
@@ -10,14 +11,15 @@ export class Surfer extends Actor {
         this.scale = new Vector(0.2, 0.2)
     }
 
-    // onInitialize(engine) {
-    //     this.on("collisionstart", (event) => this.enemieHitD(event));
-    // }
+    onInitialize(engine) {
+        this.on("collisionstart", (event) => this.handleCollision(event));
+    }
 
-    // handleCollision(event) {
-    //     if (event.other.owner instanceof Seagull) {
-    //         console.log('Bird down')
-    //         this.scene.engine.gameOver()
-    //     }
-    // }
+    handleCollision(event) {
+        if (event.other.owner instanceof Seagull) {
+            console.log('Bird down')
+            this.scene.engine.gameOver()
+        }
+    }
+
 }

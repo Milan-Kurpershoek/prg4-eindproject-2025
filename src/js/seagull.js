@@ -34,5 +34,8 @@ export class Seagull extends Actor {
         this.graphics.flipHorizontal = (this.vel.x < 0)
         this.pos.x = clamp(this.pos.x, this.width / 2, engine.drawWidth - this.width / 2);
         this.pos.y = clamp(this.pos.y, this.width / 2, engine.drawHeight - this.height / 2);
+
     }
+
+
 }   
