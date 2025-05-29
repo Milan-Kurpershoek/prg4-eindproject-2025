@@ -9,6 +9,7 @@ const Resources = {
     Sandcastle: new ImageSource('images/sandcastle.png'),
     Surfer: new ImageSource('images/surfer.png'),
     People: new ImageSource('images/people.png'),
+    Projectile: new ImageSource('images/projectile.png'),
 }
 
 const ResourceLoader = new Loader()

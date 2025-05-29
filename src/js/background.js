@@ -25,6 +25,7 @@ export class Background extends Actor {
         })
         this.anchor = Vector.Zero
         this.graphics.use(this.sprite)
+        this.z = -10;
     }
 
     onPostUpdate(engine, delta) {

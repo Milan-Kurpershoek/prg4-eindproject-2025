@@ -9,6 +9,7 @@ export class Surfer extends Actor {
         this.pos = new Vector(1500, Math.random() * 200 + 300);
         this.vel = new Vector(Math.random() * -25 - 35, 0);
         this.scale = new Vector(0.2, 0.2)
+        this.z = -5;
     }
 
     onInitialize(engine) {

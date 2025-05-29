@@ -1,5 +1,7 @@
 import { Actor, clamp, Keys, Vector } from "excalibur"
 import { Resources } from "./resources"
+import { Projectile } from "./projectile"
+
 
 export class Seagull extends Actor {
 
@@ -35,7 +37,13 @@ export class Seagull extends Actor {
         this.pos.x = clamp(this.pos.x, this.width / 2, engine.drawWidth - this.width / 2);
         this.pos.y = clamp(this.pos.y, this.width / 2, engine.drawHeight - this.height / 2);
 
+        if (engine.input.keyboard.wasPressed(Keys.Space)) {
+            console.log("shoot!")
+            this.Release();
+        }
     }
-
-
+    Release() {
+        const projectile = new Projectile(this.pos.x, this.pos.y)
+        this.scene.add(projectile)
+    }
 }   
