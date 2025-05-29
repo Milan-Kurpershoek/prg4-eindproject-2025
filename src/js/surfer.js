@@ -13,8 +13,33 @@ export class Surfer extends Actor {
     }
 
     onInitialize(engine) {
+        //ai//
+        this.seagull = engine.currentScene.actors.find(actor => actor instanceof Seagull);
+        //ai//
         this.on("collisionstart", (event) => this.handleCollision(event));
+
+        this.on("exitviewport", (e) => this.resetEnemiePositionBackToTheRight(e))
     }
+
+    //Move towards
+    // onPreUpdate(engine) {
+    //     const direction = this.seagull.pos.sub(this.pos).normalize();
+    //     const speed = 60;
+    //     this.vel = direction.scale(speed);
+    // }
+    //Move towards
+
+    //Move away
+    // onPreUpdate(engine) {
+    //     const distance = Vector.distance(this.seagull.pos, this.pos)
+    //     if (distance < 200) {
+    //         const direction = this.seagull.pos.sub(this.pos).normalize();
+    //         // const speed = 60;
+    //         this.vel = direction.negate().scale(50)
+    //     }
+    // }
+    //Move away
+
 
     handleCollision(event) {
         if (event.other.owner instanceof Seagull) {
