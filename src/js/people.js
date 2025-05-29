@@ -8,4 +8,8 @@ export class People extends Surfer {
         this.graphics.use(Resources.People.toSprite())
         this.pos = new Vector(1500, Math.random() * 100 + 550);
     }
+
+    resetEnemiePositionBackToTheRight(e) {
+        this.pos = new Vector(1500, Math.random() * 100 + 550);
+    }
 }

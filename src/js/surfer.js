@@ -23,4 +23,9 @@ export class Surfer extends Actor {
         }
     }
 
+    resetEnemiePositionBackToTheRight(e) {
+        this.pos = new Vector(1500, Math.random() * 200 + 300);
+        this.vel = new Vector(Math.random() * -25 - 35, 0);
+    }
+
 }
