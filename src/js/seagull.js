@@ -5,13 +5,16 @@ import { Projectile } from "./projectile"
 
 export class Seagull extends Actor {
 
+    score
+
     constructor() {
         super({ width: Resources.Seagull.width, height: Resources.Seagull.height })
 
         this.graphics.use(Resources.Seagull.toSprite())
-        this.pos = new Vector(0, 0)
+        this.pos = new Vector(0, 360)
         this.vel = new Vector(0, 0)
         this.scale = new Vector(0.1, 0.1)
+        this.score = 0
 
     }
 
@@ -43,7 +46,7 @@ export class Seagull extends Actor {
         }
     }
     Release() {
-        const projectile = new Projectile(this.pos.x, this.pos.y)
+        const projectile = new Projectile(this.pos.x, this.pos.y, this)
         this.scene.add(projectile)
     }
 }   

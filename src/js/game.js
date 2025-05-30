@@ -8,8 +8,11 @@ import { Kite } from './kite.js'
 import { Sandcastle } from './sandcastle.js'
 import { Surfer } from './surfer.js'
 import { People } from './people.js'
+import { Ui } from './ui.js'
 
 export class Game extends Engine {
+
+    ui
 
     constructor() {
         super({
@@ -48,6 +51,11 @@ export class Game extends Engine {
 
         const people = new People
         this.add(people)
+
+        this.ui = new Ui(seagull)
+        this.add(this.ui)
+
+
     }
 
     gameOver() {
