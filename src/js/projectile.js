@@ -3,6 +3,7 @@ import { Resources } from "./resources";
 import { Surfer } from "./surfer";
 import { Plane } from "./plane";
 import { Fish } from "./fish";
+import { Explosion } from "./explosion";
 
 export class Projectile extends Actor {
     constructor(x, y, seagull) {
@@ -26,6 +27,7 @@ export class Projectile extends Actor {
             this.seagull.score++
             this.scene.engine.ui.updateScore()
             event.other.owner.resetEnemiePositionBackToTheRight(event);
+            this.addExplosion()
             this.kill()
         } if (event.other.owner instanceof Plane) {
             this.kill()
@@ -33,5 +35,25 @@ export class Projectile extends Actor {
             this.kill()
         }
 
+
+    }
+
+    addExplosion() {
+        console.log('KABOOM')
+        // this.explosion = new Explosion()
+        // // this.explosion.emitRate = 100;
+        // this.addChild(this.explosion)
+
+        //ai
+        const explosion = new Explosion()
+        explosion.pos = this.pos.clone()
+        this.scene.add(explosion)
+
+        setTimeout(() => {
+            explosion.isEmitting = false
+            setTimeout(() => {
+                explosion.kill()
+            }, 1000)
+        }, 100)
     }
 } 
