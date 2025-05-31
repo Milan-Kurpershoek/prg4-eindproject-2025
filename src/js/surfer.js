@@ -3,13 +3,14 @@ import { Resources } from "./resources";
 import { Seagull } from "./seagull";
 
 export class Surfer extends Actor {
-    constructor() {
+    constructor(seagull) {
         super({ width: Resources.Surfer.width, height: Resources.Surfer.height })
         this.graphics.use(Resources.Surfer.toSprite())
         this.pos = new Vector(1500, Math.random() * 200 + 300);
         this.vel = new Vector(Math.random() * -25 - 35, 0);
         this.scale = new Vector(0.2, 0.2)
         this.z = -5;
+        this.seagull = seagull
     }
 
     onInitialize(engine) {
@@ -43,8 +44,11 @@ export class Surfer extends Actor {
 
     handleCollision(event) {
         if (event.other.owner instanceof Seagull) {
-            console.log('Bird down')
-            this.scene.engine.gameOver()
+            // console.log('Bird down')
+            // this.scene.engine.gameOver()
+            this.seagull.health -= 389
+            this.scene.engine.feather.decreaseAmountOfFeathers()
+            // console.log(this.seagull.health)
         }
     }
 

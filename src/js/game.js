@@ -9,6 +9,7 @@ import { Sandcastle } from './sandcastle.js'
 import { Surfer } from './surfer.js'
 import { People } from './people.js'
 import { Ui } from './ui.js'
+import { Feather } from './feather.js'
 
 export class Game extends Engine {
 
@@ -46,7 +47,7 @@ export class Game extends Engine {
         const sandcastle = new Sandcastle
         this.add(sandcastle)
 
-        const surfer = new Surfer
+        const surfer = new Surfer(seagull)
         this.add(surfer)
 
         const people = new People
@@ -54,6 +55,9 @@ export class Game extends Engine {
 
         this.ui = new Ui(seagull)
         this.add(this.ui)
+
+        this.feather = new Feather(seagull)
+        this.add(this.feather)
 
 
     }

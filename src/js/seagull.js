@@ -6,6 +6,7 @@ import { Projectile } from "./projectile"
 export class Seagull extends Actor {
 
     score
+    health
 
     constructor() {
         super({ width: Resources.Seagull.width, height: Resources.Seagull.height })
@@ -15,7 +16,8 @@ export class Seagull extends Actor {
         this.vel = new Vector(0, 0)
         this.scale = new Vector(0.1, 0.1)
         this.score = 0
-
+        this.health = 1556
+        // console.log(this.health)
     }
 
     //Snippet
@@ -46,6 +48,7 @@ export class Seagull extends Actor {
         }
     }
     Release() {
+        //ai: this
         const projectile = new Projectile(this.pos.x, this.pos.y, this)
         this.scene.add(projectile)
     }
