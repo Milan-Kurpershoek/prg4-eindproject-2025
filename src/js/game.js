@@ -11,6 +11,7 @@ import { People } from './people.js'
 import { Ui } from './ui.js'
 import { Feather } from './feather.js'
 import { Fish } from './fish.js'
+import { Drone } from './drone.js'
 
 export class Game extends Engine {
 
@@ -63,9 +64,8 @@ export class Game extends Engine {
         this.fish = new Fish(seagull)
         this.add(this.fish)
 
-
-
-
+        this.drone = new Drone
+        this.add(this.drone)
     }
 
     gameOver() {

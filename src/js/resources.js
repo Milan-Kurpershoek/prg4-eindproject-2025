@@ -12,6 +12,7 @@ const Resources = {
     Projectile: new ImageSource('images/projectile.png'),
     Feather: new ImageSource('images/feather.png', { wrapping: ImageWrapping.Repeat }),
     Fish: new ImageSource('images/fish.png'),
+    Drone: new ImageSource('images/drone.png'),
 }
 
 const ResourceLoader = new Loader()

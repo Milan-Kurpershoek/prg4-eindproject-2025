@@ -5,8 +5,8 @@ import { Projectile } from "./projectile"
 
 export class Seagull extends Actor {
 
-    score
-    health
+    score = 0
+    health = 1556
 
     constructor() {
         super({ width: Resources.Seagull.width, height: Resources.Seagull.height })
@@ -15,8 +15,8 @@ export class Seagull extends Actor {
         this.pos = new Vector(0, 360)
         this.vel = new Vector(0, 0)
         this.scale = new Vector(0.1, 0.1)
-        this.score = 0
-        this.health = 1556
+        // this.score = 0
+        // this.health = 1556
         // console.log(this.health)
     }
 
@@ -25,16 +25,16 @@ export class Seagull extends Actor {
         let xspeed = 0
         let yspeed = 0
 
-        if (engine.input.keyboard.isHeld(Keys.Up) || engine.input.keyboard.isHeld(Keys.W)) {
+        if (engine.input.keyboard.isHeld(Keys.W)) {
             yspeed = -200;
         }
-        if (engine.input.keyboard.isHeld(Keys.Down) || engine.input.keyboard.isHeld(Keys.S)) {
+        if (engine.input.keyboard.isHeld(Keys.S)) {
             yspeed = 200;
         }
-        if (engine.input.keyboard.isHeld(Keys.Left) || engine.input.keyboard.isHeld(Keys.A)) {
+        if (engine.input.keyboard.isHeld(Keys.A)) {
             xspeed = -200;
         }
-        if (engine.input.keyboard.isHeld(Keys.Right) || engine.input.keyboard.isHeld(Keys.D)) {
+        if (engine.input.keyboard.isHeld(Keys.D)) {
             xspeed = 200;
         }
         this.vel = new Vector(xspeed, yspeed);
