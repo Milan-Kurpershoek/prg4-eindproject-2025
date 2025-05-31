@@ -27,17 +27,16 @@ export class Feather extends Actor {
 
     }
 
-    // increaseAmountOfFeathers() {
-    //     console.log('Yippie')
-    //     console.log(this.seagull.health)
-    //     this.sprite.sourceView.width = this.seagull.health;
-    //     this.sprite.destSize.width = this.seagull.health;
-    // }
+    increaseAmountOfFeathers() {
+        console.log('Yippie')
+        console.log(this.seagull.health)
+        this.sprite.sourceView.width = this.seagull.health;
+        this.sprite.destSize.width = this.seagull.health;
+    }
 
     chechForGameOver() {
         if (this.seagull.health === 0) {
             this.scene.engine.gameOver()
         }
     }
-
 } 

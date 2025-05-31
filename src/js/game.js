@@ -10,6 +10,7 @@ import { Surfer } from './surfer.js'
 import { People } from './people.js'
 import { Ui } from './ui.js'
 import { Feather } from './feather.js'
+import { Fish } from './fish.js'
 
 export class Game extends Engine {
 
@@ -58,6 +59,11 @@ export class Game extends Engine {
 
         this.feather = new Feather(seagull)
         this.add(this.feather)
+
+        this.fish = new Fish(seagull)
+        this.add(this.fish)
+
+
 
 
     }

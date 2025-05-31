@@ -2,6 +2,7 @@ import { Actor, Vector } from "excalibur";
 import { Resources } from "./resources";
 import { Surfer } from "./surfer";
 import { Plane } from "./plane";
+import { Fish } from "./fish";
 
 export class Projectile extends Actor {
     constructor(x, y, seagull) {
@@ -27,6 +28,8 @@ export class Projectile extends Actor {
             event.other.owner.resetEnemiePositionBackToTheRight(event);
             this.kill()
         } if (event.other.owner instanceof Plane) {
+            this.kill()
+        } if (event.other.owner instanceof Fish) {
             this.kill()
         }
 
