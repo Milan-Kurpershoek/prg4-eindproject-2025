@@ -1,21 +1,31 @@
-import '../css/style.css'
-import { Actor, Engine, Vector, DisplayMode } from "excalibur"
-import { Resources, ResourceLoader } from './resources.js'
-import { Background } from './background.js'
-import { Seagull } from './seagull.js'
-import { Plane } from './plane.js'
-import { Kite } from './kite.js'
-import { Sandcastle } from './sandcastle.js'
-import { Surfer } from './surfer.js'
-import { People } from './people.js'
-import { Ui } from './ui.js'
-import { Feather } from './feather.js'
-import { Fish } from './fish.js'
-import { Drone } from './drone.js'
+import '../css/style.css';
+import { Actor, Engine, Vector, DisplayMode } from "excalibur";
+import { Resources, ResourceLoader } from './resources.js';
+import { Background } from './background.js';
+import { Seagull } from './seagull.js';
+import { Plane } from './plane.js';
+import { Kite } from './kite.js';
+import { Sandcastle } from './sandcastle.js';
+import { Surfer } from './surfer.js';
+import { People } from './people.js';
+import { Ui } from './ui.js';
+import { Feather } from './feather.js';
+import { Fish } from './fish.js';
+import { Drone } from './drone.js';
 
 export class Game extends Engine {
 
-    ui
+    background;
+    seagull;
+    plane;
+    kite;
+    sandcastle;
+    surfer;
+    people;
+    ui;
+    feather;
+    fish;
+    drone;
 
     constructor() {
         super({
@@ -24,55 +34,52 @@ export class Game extends Engine {
             maxFps: 60,
             pixelArt: true,
             displayMode: DisplayMode.FitScreen
-            // physics: {
-            //     solver: SolverStrategy.Arcade,
-            //     gravity: new Vector(0, 800),
-            // }
-        })
-        this.start(ResourceLoader).then(() => this.startGame())
+        });
+        this.start(ResourceLoader).then(() => this.startGame());
     }
 
     startGame() {
-        const background = new Background
-        this.add(background)
+        this.background = new Background;
+        this.add(this.background);
 
-        const seagull = new Seagull
-        this.add(seagull)
+        this.seagull = new Seagull;
+        this.add(this.seagull);
 
-        const plane = new Plane
-        this.add(plane)
+        this.plane = new Plane;
+        this.add(this.plane);
 
         for (let i = 0; i < 3; i++) {
-            this.add(new Kite());
+            this.kite = new Kite
+            this.add(this.kite);
         }
 
-        const sandcastle = new Sandcastle
-        this.add(sandcastle)
+        this.sandcastle = new Sandcastle;
+        this.add(this.sandcastle);
 
-        const surfer = new Surfer(seagull)
-        this.add(surfer)
+        this.surfer = new Surfer(this.seagull);
+        this.add(this.surfer);
 
-        const people = new People
-        this.add(people)
+        this.people = new People;
+        this.add(this.people);
 
-        this.ui = new Ui(seagull)
-        this.add(this.ui)
+        this.ui = new Ui(this.seagull);
+        this.add(this.ui);
 
-        this.feather = new Feather(seagull)
-        this.add(this.feather)
+        this.feather = new Feather(this.seagull);
+        this.add(this.feather);
 
-        this.fish = new Fish(seagull)
-        this.add(this.fish)
+        this.fish = new Fish(this.seagull);
+        this.add(this.fish);
 
-        this.drone = new Drone
-        this.add(this.drone)
+        this.drone = new Drone;
+        this.add(this.drone);
     }
 
     gameOver() {
         for (let actor of this.currentScene.actors) {
-            actor.kill()
+            actor.kill();
         }
-        this.startGame()
+        this.startGame();
     }
 }
 

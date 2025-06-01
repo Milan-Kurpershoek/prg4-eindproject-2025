@@ -1,19 +1,17 @@
 import { Actor, Color, Font, Label, Vector } from "excalibur";
 
-
 export class Ui extends Actor {
 
-    labelPlayerOne
-
-    playerOne
+    #labelPlayer;
+    #player;
 
     constructor(seagull) {
-        super({})
-        this.playerOne = seagull
+        super({});
+        this.#player = seagull;
     }
 
     onInitialize(engine) {
-        this.labelPlayerOne = new Label({
+        this.#labelPlayer = new Label({
             text: 'People pooped on: 0',
             pos: new Vector(10, 10),
             font: new Font({
@@ -21,12 +19,11 @@ export class Ui extends Actor {
                 family: 'Ink Free',
                 color: Color.Black
             })
-        })
-        this.addChild(this.labelPlayerOne)
+        });
+        this.addChild(this.#labelPlayer);
     }
 
     updateScore() {
-        this.labelPlayerOne.text = `People pooped on: ${this.playerOne.score}`
-
+        this.#labelPlayer.text = `People pooped on: ${this.#player.score}`;
     }
 }

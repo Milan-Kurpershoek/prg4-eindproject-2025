@@ -2,7 +2,6 @@ import { Color, EmitterType, ParticleEmitter, Vector } from "excalibur";
 
 export class Explosion extends ParticleEmitter {
     constructor() {
-        console.log('KABOOM')
         //Snippit//Ai
         super({
             radius: 30,
